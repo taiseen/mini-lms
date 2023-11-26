@@ -1,9 +1,7 @@
-
 const HomePage = () => {
   return (
-    <div className="text-2xl text-stone-500">
+    <div className="text-8xl text-stone-500 flex items-center justify-center h-full">
       Mini LMS
-      
     </div>
   );
 };

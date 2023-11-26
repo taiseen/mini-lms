@@ -1,18 +1,17 @@
 "use client";
-import { forAll, forTeacher } from "@/constants/routes";
-import { teacherPath } from "@/constants/data";
+import routes, { forAll, forTeacher } from "@/constants/routes";
 import { usePathname } from "next/navigation";
 import SidebarItem from "./SidebarItem";
 
 const SidebarRoutes = () => {
   const urlPathName = usePathname();
-  const isTeacherPath = urlPathName.endsWith(teacherPath);
+  const isTeacherPath = urlPathName.includes(routes.teacherPage);
 
-  const routes = isTeacherPath ? forTeacher : forAll;
+  const navigationRoutes = isTeacherPath ? forTeacher : forAll;
 
   return (
     <div>
-      {routes.map((route) => (
+      {navigationRoutes.map((route) => (
         <SidebarItem key={route.href} {...route} />
       ))}
     </div>

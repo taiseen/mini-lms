@@ -1,5 +1,7 @@
 const TeacherPage = () => {
-  return <div>TeacherPage</div>;
+  return <div className="text-blue-400">
+    TeacherPage
+    </div>;
 };
 
 export default TeacherPage;

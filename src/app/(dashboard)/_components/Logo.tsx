@@ -1,9 +1,10 @@
+import routes from "@/constants/routes";
 import Image from "next/image";
 import Link from "next/link";
 
 const Logo = () => {
   return (
-    <Link href="/">
+    <Link href={routes.root}>
       <Image
         alt="logo"
         width="200"
