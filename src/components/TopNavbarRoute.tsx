@@ -14,14 +14,14 @@ const TopNavbarRoute = () => {
       {isTeacherPath ? (
         <Link
           href={routes.root}
-          className="px-3 py-1 rounded bg-red-400 flex items-center gap-2"
+          className="btn bg-red-400 flex items-center gap-2"
         >
           <LogOut size={16} /> Exit
         </Link>
       ) : (
         <Link
           href={routes.teacherPage}
-          className="px-3 py-1 rounded bg-green-400 flex items-center gap-2"
+          className="btn bg-green-400 flex items-center gap-2"
         >
           <GraduationCap size={16} />
           Teacher

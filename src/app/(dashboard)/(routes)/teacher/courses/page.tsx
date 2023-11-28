@@ -6,7 +6,7 @@ const CoursesPage = () => {
     <div className="flex flex-col gap-2 p-4">
       <Link
         href={routes.courseCreatePage}
-        className="px-4 py-2 bg-green-600 rounded w-fit text-slate-100 hover:bg-green-700 transition-all"
+        className="btn bg-green-600 rounded w-fit text-slate-100 hover:bg-green-700 transition-all"
       >
         Create Courses
       </Link>
