@@ -1,12 +1,10 @@
 > 24 - Nov - 2023
 
 ## Udemy Clone | NextJs
-
 - yarn cerate next-app
 - yarn add @clerk/nextjs
 - yarn add react-hook-form
 - yarn add zod
-
 - npx shadcn-ui@latest add sheet
 - npx shadcn-ui@latest add button
 - npx shadcn-ui@latest add input
