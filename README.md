@@ -13,6 +13,8 @@
 ```js
 Learning Note:
 
+* File & Folder structure system...
+
 `page.tsx`    ==> hold `content` / ui text
 `layout.tsx`  ==> hold `structure` / component position / style
 
