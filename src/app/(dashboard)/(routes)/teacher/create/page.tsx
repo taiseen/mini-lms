@@ -1,9 +1,12 @@
 "use client";
-import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Input } from "@/components/ui/input";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import routes from "@/constants/routes";
+import toast from "react-hot-toast";
 import Link from "next/link";
+import axios from "axios";
 import * as z from "zod";
 import {
   FormDescription,
@@ -21,28 +24,45 @@ const formSchema = z.object({
 });
 
 const CreatePage = () => {
+  const router = useRouter();
+
   // resolver aspect... which schema to use!?
-  const form = useForm({
+  const reactHookForm = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       title: "",
     },
   });
 
-  const { isSubmitting, isValid } = form.formState;
+  const { isSubmitting, isValid } = reactHookForm.formState;
   const isDisabled = isSubmitting || !isValid;
 
-  const onSubmit = (value: z.infer<typeof formSchema>) => {
-    console.log(value);
+  const onSubmit = async (userInput: z.infer<typeof formSchema>) => {
+    console.log(userInput);
+
+    try {
+      const response = await axios.post("api/course", userInput);
+
+      // go to this dynamic route
+      router.push(`${routes.teacherCoursesPage}/${response.data.id}`);
+    } catch (error) {
+      toast.error("Something went wrong...", { position: "top-right" });
+    }
   };
 
   return (
     <div className="p-4">
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)}>
+      <h1 className="text-xl">Name of your course</h1>
+      <p className="text-sm text-slate-600">Give a title of your course</p>
+
+      <Form {...reactHookForm}>
+        <form
+          onSubmit={reactHookForm.handleSubmit(onSubmit)}
+          className="mt-4 space-y-4"
+        >
           <FormField
             name="title"
-            control={form.control}
+            control={reactHookForm.control}
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Title</FormLabel>

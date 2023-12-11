@@ -5,6 +5,8 @@
 - yarn add @clerk/nextjs
 - yarn add react-hook-form
 - yarn add zod
+- yarn add axios
+- yarn add react-hot-toast
 - npx shadcn-ui@latest add sheet
 - npx shadcn-ui@latest add button
 - npx shadcn-ui@latest add input

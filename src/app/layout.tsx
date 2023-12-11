@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "react-hot-toast";
 import { Inter } from "next/font/google";
 import { LayoutType } from "@/types";
 import "../style/globals.css";
@@ -15,7 +16,10 @@ const RootLayout = ({ children }: LayoutType) => {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <Toaster />
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );
