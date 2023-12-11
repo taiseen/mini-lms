@@ -31,6 +31,8 @@ place `middleware.ts` file inside `/src` folder
 pass an array of string of page name
 
 * set background img at auth page
+
+* all routing path control by a central place
 ```
 
 - [Icon Resource](https://lucide.dev/icons)
