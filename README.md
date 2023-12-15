@@ -7,6 +7,8 @@
 - yarn add zod
 - yarn add axios
 - yarn add react-hot-toast
+- yarn add -D prisma
+- npx prisma init
 - npx shadcn-ui@latest add sheet
 - npx shadcn-ui@latest add button
 - npx shadcn-ui@latest add input
