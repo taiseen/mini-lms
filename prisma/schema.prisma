@@ -9,3 +9,38 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+// database schema...
+
+model Course {
+  id          String       @id @default(uuid())
+  userId      String
+  title       String       @db.Text
+  description String?      @db.Text
+  imageUrl    String?      @db.Text
+  price       Float?
+  isPublish   Boolean      @default(false)
+  createdAt   DateTime     @default(now())
+  updateAt    DateTime     @updatedAt
+  attachment  Attachment[]
+  category    Category?    @relation(fields: [categoryId], references: [id])
+  categoryId  String?
+}
+
+model Category {
+  id     String   @id @default(uuid())
+  name   String   @unique
+  Course Course[]
+}
+
+model Attachment {
+  id        String   @id @default(uuid())
+  name      String
+  url       String   @db.Text
+  courseId  String
+  Course    Course?  @relation(fields: [courseId], references: [id])
+  createdAt DateTime @default(now())
+  updateAt  DateTime @updatedAt
+
+  @@index([courseId])
+}

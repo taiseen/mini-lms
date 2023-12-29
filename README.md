@@ -1,4 +1,4 @@
-> 24 - Nov - 2023
+br> 24 - Nov - 2023
 
 ## Udemy Clone | NextJs
 - yarn cerate next-app
@@ -7,12 +7,25 @@
 - yarn add zod
 - yarn add axios
 - yarn add react-hot-toast
-- yarn add -D prisma
-- npx prisma init
 - npx shadcn-ui@latest add sheet
 - npx shadcn-ui@latest add button
 - npx shadcn-ui@latest add input
 - npx shadcn-ui@latest add form
+
+
+## [Aiven DB](https://console.aiven.io)
+
+* For prisma
+```
+- yarn add -D prisma
+- npx prisma init
+
+- yarn add @prisma/client
+- npx prisma generate
+- npx prisma db push
+```
+
+</br>
 
 ```js
 Learning Note:
